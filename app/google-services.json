@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "128652712724",
+    "project_id": "allometryreader",
+    "storage_bucket": "allometryreader.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128652712724:android:f2af7f6911e1a00a11c001",
+        "android_client_info": {
+          "package_name": "com.allometry.allometryreader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128652712724-kgbiqfq138qpkj3kcj7orcgnodtn86k5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxDO7W_iTwck_Wt5Pqh01TIroLh1B0hSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128652712724-kgbiqfq138qpkj3kcj7orcgnodtn86k5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
