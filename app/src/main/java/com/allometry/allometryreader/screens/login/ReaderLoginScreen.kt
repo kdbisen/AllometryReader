@@ -27,11 +27,13 @@ import com.allometry.allometryreader.R
 import com.allometry.allometryreader.components.EmailInput
 import com.allometry.allometryreader.components.PasswordInput
 import com.allometry.allometryreader.components.ReaderLogo
+import com.allometry.allometryreader.navigation.ReaderScreens
 
 
 @Composable
 fun ReaderLoginScreen(
-    navController: NavHostController
+    navController: NavHostController,
+    viewModel: LoginScreenViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
 ) {
 
 
@@ -53,10 +55,16 @@ fun ReaderLoginScreen(
             if (showLoginForm.value) {
                 UserForm(loading = false, isCreatedAccount = false) { email, password ->
                     Log.d("TAG", "ReaderLoginScreen: $email $password")
+                    viewModel.signInWithEmailAndPassword(email, password) {
+                        navController.navigate(ReaderScreens.ReaderHomeScreen.name)
+                    }
                 }
             } else {
                 UserForm(loading = false, isCreatedAccount = true) { email, password ->
                     Log.d("TAG", "ReaderLoginScreen: $email $password")
+                    viewModel.createUserWithEmailAndPassword(email, password) {
+                        navController.navigate(ReaderScreens.ReaderHomeScreen.name)
+                    }
                 }
 
             }

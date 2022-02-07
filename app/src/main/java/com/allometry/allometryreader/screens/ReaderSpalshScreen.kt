@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.allometry.allometryreader.navigation.ReaderScreens
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.delay
 
 //@Preview
@@ -42,7 +43,14 @@ fun ReaderSplashScreen(
             OvershootInterpolator(8f).getInterpolation(it)
         })
         delay(2000L)
-        navController.navigate(ReaderScreens.LoginScreen.name)
+
+        if(FirebaseAuth.getInstance().currentUser?.email.isNullOrEmpty()){
+            navController.navigate(ReaderScreens.LoginScreen.name)
+        }else {
+            navController.navigate(ReaderScreens.ReaderHomeScreen.name)
+        }
+
+
     }
 
     Surface(
@@ -51,7 +59,6 @@ fun ReaderSplashScreen(
             .size(330.dp)
             .scale(scale.value),
         shape = CircleShape,
-      //  color = Color.Transparent,
         border = BorderStroke(width = 2.dp, color = Color.LightGray)
     ) {
 

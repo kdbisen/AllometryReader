@@ -1,6 +1,7 @@
 package com.allometry.allometryreader.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -24,6 +25,8 @@ fun ReaderNavigation() {
         }
 
         composable(ReaderScreens.LoginScreen.name){
+
+
            ReaderLoginScreen(navController = navController)
         }
     }
