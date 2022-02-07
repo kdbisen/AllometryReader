@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AllometryReader</string>
+    <string name="create_acct">PLease enter a valid email and password that is at least 6 characters </string>
 </resources>
